@@ -1,4 +1,26 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿var Book = {} || Book;
 
-// Write your JavaScript code.
+Book.tbBook = function () {
+    $.ajax({
+        url: 'https://localhost:44382/api/book/gets',
+        method: 'GET',
+        contentType: 'JSON',
+        success: function (data) {
+            $.each(data, function (i, v) {
+                $('#tbBook>tbody').append(`<tr>
+                                            <td>${v.bookId}</td>
+                                            <td>${v.bookName}</td>
+                                        </tr>`);
+            })
+
+        }
+    });
+}
+
+Book.init = function () {
+    Book.tbBook();
+}
+
+$(document).ready(function () {
+    Book.init();
+});

@@ -1,8 +1,16 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+﻿<div class="row">
+    <table class="table table-bordered table-hover" id="tbBook">
+        <thead class="thead-dark">
+            <tr>
+                <th>BookId</th>
+                <th>Book Name</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
 </div>
+
+@section Scripts{
+    <script src="~/js/site.js" asp-append-version="true"></script>
+}

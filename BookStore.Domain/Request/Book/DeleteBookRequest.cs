@@ -6,5 +6,6 @@ namespace BookStore.Domain.Request.Book
 {
     public class DeleteBookRequest
     {
+        public int BookId { get; set; }
     }
 }

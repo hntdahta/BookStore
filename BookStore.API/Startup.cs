@@ -1,3 +1,7 @@
+using BookStore.BAL;
+using BookStore.BAL.Interface;
+using BookStore.DAL;
+using BookStore.DAL.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,6 +31,8 @@ namespace BookStore.API
         {
             services.AddControllers();
             services.AddSwaggerGen();
+            services.AddScoped<IBookService, BookService>();
+            services.AddScoped<IBookRepository, BookRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
